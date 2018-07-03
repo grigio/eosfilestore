@@ -65,6 +65,9 @@ if (action === 'get') {
   }
   callme()
 
+} else if (action === '--version') {
+  const pkg = fs.readFileSync('package.json')
+  console.log(JSON.parse(pkg.toString()).version)
 } else { // --help
   console.log(`
 eosfilestore - upload and download files on EOS Blockchain
