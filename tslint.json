@@ -1,0 +1,38 @@
+{
+  "extends": [
+    "tslint:latest",
+    "tslint-config-prettier"
+  ],
+  "rules": {
+    "no-var-requires":false,
+    "object-literal-shorthand": [
+      false,
+      "never"
+    ],
+    "object-literal-sort-keys": false,
+    "no-console": {
+      "severity": "none",
+      "options": [
+        "debug",
+        "info",
+        "log",
+        "time",
+        "timeEnd",
+        "trace"
+      ]
+    },
+    "semicolon": [
+      false,
+      "never"
+    ],
+    "ordered-imports": false,
+    "interface-name": [
+      true,
+      "never-prefix"
+    ],
+    "no-implicit-dependencies": [
+      true,
+      "dev"
+    ]
+  }
+}
