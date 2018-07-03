@@ -1,6 +1,6 @@
 {
   "name": "eosfilestore",
-  "version": "0.0.19",
+  "version": "0.0.18",
   "description": "",
   "main": "index.js",
   "bin": {
@@ -9,7 +9,7 @@
   "scripts": {
     "test": "jest",
     "build": "npx tsc",
-    "publish": "npm version patch && npm build && npm publish"
+    "publish": "npm version patch && npm run build && npm publish"
   },
   "repository": {
     "type": "git",
