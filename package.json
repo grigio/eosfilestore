@@ -9,7 +9,7 @@
   "scripts": {
     "test": "jest",
     "build": "npx tsc",
-    "deploy": "npm version patch && npm run build && npm publish"
+    "deploy": "npm version patch && rm -rf dist/ && npm run build && npm publish"
   },
   "repository": {
     "type": "git",
