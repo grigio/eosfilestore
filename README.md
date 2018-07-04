@@ -10,7 +10,7 @@ EOSfilestore uploads files on EOS blockchain as multiple transactions
 sudo npm install -g eosfilestore 
 ```
 
-Then run `eosfilestore` and edit `~/eosfilestore/config.json` with your **account** (from) and **wif** (private key)
+Then run `eosfilestore` and edit `~/.eosfilestore/config.json` with your **account** (from) and **wif** (private key)
 
 ## Usage
 
