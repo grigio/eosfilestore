@@ -21,8 +21,12 @@
     "file",
     "immutable"
   ],
-  "author": "",
+  "author": "Luigi Maselli",
   "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/grigio/eosfilestore/issues"
+  },
+  "homepage": "https://github.com/grigio/eosfilestore#-eosfilestore",
   "devDependencies": {
     "@types/base64-js": "^1.2.5",
     "@types/jest": "^23.1.3",
