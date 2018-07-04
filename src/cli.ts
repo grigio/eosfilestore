@@ -2,6 +2,7 @@
 
 import * as Base64 from 'base64-js'
 import * as fs from "fs"
+// import fetch from 'node-fetch'
 import { costPerTx } from './costants'
 import { prepareChunks, doTx, fetchTx } from './core'
 import { createPayload } from './utils'
@@ -60,8 +61,10 @@ if (action === 'get') {
   async function callme() {
     const chunks = await prepareChunks(filename)
     const numTxs = chunks.length
-    const cost = (numTxs * costPerTx).toFixed(4)
-    console.log(`${numTxs} txs, ${cost} EOS`)
+    const cost = numTxs * costPerTx
+    const priceData = await fetch('https://api.coinmarketcap.com/v2/ticker/1765/').then(data => data.json())
+    const eosPrice = priceData.data.quotes.USD.price
+    console.log(`${numTxs} txs, ${(cost).toFixed(4)} EOS (${(cost * eosPrice).toFixed(4)} USD)`)
   }
   callme()
 
