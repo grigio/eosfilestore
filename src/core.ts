@@ -21,13 +21,23 @@ const eos = Eos(config)
 export function doTx(memo: string): Promise<any> {
   return new Promise((resolve: any) => {
     setTimeout(() => {
-      eos.transfer(from, 'eosfilestore', '0.0001 EOS', memo, (error: any, result: any) => {
-        if (error) {
-          console.error(error)
-        }
-        // console.log('..',JSON.stringify(result))
-        resolve(result)
-      })
+      // eos.transfer(from, 'eosfilestore', '0.0001 EOS', memo, (error: any, result: any) => {
+      //   if (error) {
+      //     console.error(error)
+      //   }
+      //   // console.log('..',JSON.stringify(result))
+      //   resolve(result)
+      // })
+
+      const options = {
+        authorization: [`${from}@active`]
+      }
+      eos.contract('decentwitter').then((contract: any) => {
+        contract.avatar(memo, options).then((res:any) => {
+          resolve(res)
+        })
+      });
+
     }, 100); // NOTE: rate limit?
   })
 }
@@ -44,9 +54,12 @@ export function doTx(memo: string): Promise<any> {
 export function fetchTx(txid: string, buffer?: string): Promise<string> {
   return new Promise((resolve: any) => {
     eos.getTransaction(txid).then((data: any) => {
-      // console.log(data)
+      // console.log(JSON.stringify(data.trx.trx.actions[0].data.msg))
       // console.log(data.trx.trx.actions[0].data.memo) // data.trx.trx.actions[0].data.memo
-      const memo = JSON.parse(data.trx.trx.actions[0].data.memo)
+
+      // const memo = JSON.parse(data.trx.trx.actions[0].data.memo)
+      const memo = JSON.parse(data.trx.trx.actions[0].data.msg)
+
       console.log(`${memo.n}`) // verbose
       if (memo.n) {
         resolve(fetchTx(memo.n, `${buffer}${memo.c}`))
