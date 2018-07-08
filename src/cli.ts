@@ -61,11 +61,13 @@ if (action === 'get') {
   async function callme() {
     const chunks = await prepareChunks(filename)
     const numTxs = chunks.length
+    const netEst = (1272 * numTxs) / 1000
+    const cpuEst = (20000 * numTxs) / 1000 // NOTE: it changes per tx
     // const cost = numTxs * costPerTx
     // const priceData = await fetch('https://api.coinmarketcap.com/v2/ticker/1765/').then(data => data.json())
     // const eosPrice = priceData.data.quotes.USD.price
     // console.log(`${numTxs} txs, ${(cost).toFixed(4)} EOS (${(cost * eosPrice).toFixed(4)} USD)`)
-    console.log(`${numTxs} txs`)
+    console.log(`0 EOS - ${numTxs} txs / CPU: ${cpuEst} ms / NET: ${netEst} KB`)
   }
   callme()
 
