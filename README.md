@@ -25,6 +25,12 @@ eosfilestore push myfile.txt       # it will generate the txs and upload the fil
 eosfilestore get <txid> myfile.txt # it will download the file from the EOS Blockchain
 ```
 
+## How does it work?
+
+1. The file is base64 encoded
+2. N `actions` partial transactions are generated and broadcasted to the EOS Blockchain
+3. Every tx link to the next one
+
 ## Donate
 
 If you like this software you can **donate EOS** to `@eosfilestore` account.
