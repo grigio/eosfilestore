@@ -3,7 +3,7 @@ import * as fs from "fs";
 import mime from 'mime-types'
 const Eos = require('eosjs')
 import { splitString } from './utils'
-import { maxPayloadSize, chainId, from, wif } from './costants'
+import { maxPayloadSize, chainId, from, wif, permission } from './costants'
 
 const config = {
   chainId: chainId,
@@ -30,7 +30,7 @@ export function doTx(memo: string): Promise<any> {
       // })
 
       const options = {
-        authorization: [`${from}@active`]
+        authorization: [`${from}@${permission}`]
       }
       eos.contract('decentwitter').then((contract: any) => {
         contract.avatar(memo, options).then((res:any) => {
