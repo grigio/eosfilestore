@@ -1,6 +1,6 @@
 {
   "name": "eosfilestore",
-  "version": "0.0.28",
+  "version": "0.1.0",
   "description": "",
   "main": "index.js",
   "bin": {
