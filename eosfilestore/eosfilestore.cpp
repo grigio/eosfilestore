@@ -6,7 +6,7 @@ class eosfilestore : public eosio::contract {
       using contract::contract;
 
       // @abi action
-      void upload(std::string chunk) {}
+      void upload(std::string msg) {}
 };
 
 EOSIO_ABI( eosfilestore, (upload) )

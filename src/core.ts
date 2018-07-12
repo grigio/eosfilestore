@@ -32,8 +32,8 @@ export function doTx(memo: string): Promise<any> {
       const options = {
         authorization: [`${from}@active`]
       }
-      eos.contract('decentwitter').then((contract: any) => {
-        contract.avatar(memo, options).then((res:any) => {
+      eos.contract('eosfilestore').then((contract: any) => {
+        contract.upload(memo, options).then((res:any) => {
           resolve(res)
         })
       });

@@ -30,11 +30,13 @@ eosfilestore get <txid> myfile.txt # it will download the file from the EOS Bloc
 1. The file is base64 encoded
 2. N `actions` partial transactions are generated and broadcasted to the EOS Blockchain
 3. Every tx link to the next one
-4. Currently is used the `decentwitter/avatar` action
+4. Currently is used the `eosfilestore/upload` action
 
 ## Donate
 
 If you like this software you can **donate EOS** to `@eosfilestore` account.
+
+Thanks to `@eosnationdon` for the smart contract deployment donation.
 
 ## License
 
