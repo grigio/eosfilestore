@@ -10,7 +10,7 @@ function loadConfig() {
 {
   "from":"",
   "privateKey":"",
-  "permssion":"active"
+  "permission":"active"
 }
     `)
     console.log(`eosfilestore: Generated '${confDir}/config.json', please edit with your EOS keys`)
