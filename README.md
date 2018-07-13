@@ -36,7 +36,7 @@ eosfilestore get <txid> myfile.txt # it will download the file from the EOS Bloc
 
 If you like this software you can **donate EOS** to `@eosfilestore` account.
 
-Thanks to `@eosnationdon` for the smart contract deployment donation.
+Thanks to [`EOS Nation Community Fund`](https://eosnation.io/community-engagement-fund/) for the smart contract deployment donation.
 
 ## License
 
